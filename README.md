@@ -1,12 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Design Message Board using ReactJS
 
-## Available Scripts
+### Problem Statement
+Build a public message board where anyone can post a message, vote up or down a message.
 
-In the project directory, you can run:
+### Objective
+Design and implement a responsive UI that works on desktop web browser, mobile phones and tablets.
 
-### `npm start`
+### Assumptions
+* Authentication is not required. It’s a public message board.
+* There is only a single message board.
+* Anyone can vote up or down a message on the board.
+* Doesn’t need to build the backend to manage the state.
+* Expectation is to use the stubbed out API that manage state storage in browser’s localStorage
+* Since, No backend management is currently added, Multiple session may have conflicting outcome
 
-Runs the app in the development mode.<br>
+### Implementations
+* At any specific time, only first 50 top voted messages are kept.
+* The messages are displayed in descending order of popularity based on the vote count.
+* Every 15 minutes, Messages’ vote are decremented by one.
+* react-simple-storage library has been used to persist state storage.
+* Style component has been used with the limited capacity.
+* No other external API or library used
+
+### Implementations Steps
+
+1. Download Root directory MessageBoard 
+2. cd MessageBoard
+3. npm install (It will install all dependent packages)
+4. npm start
+
+*Runs the app in the development mode.*
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
