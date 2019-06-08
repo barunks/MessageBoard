@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import '../styles/MessageBoard.css';
+
 import Message from '../../Message/components/Message.js';
+import { ContainerBoard } from '../styles/MessageBoardStyled';
 
 class  MessageBoard extends Component{
     render() {
       return (
-        <div className="container-board">
+        <ContainerBoard>
           {
             this.props.postList.map((item, index) => (
               <Message key = {index}
@@ -18,7 +19,7 @@ class  MessageBoard extends Component{
               />
             ))
           }
-        </div>
+        </ContainerBoard>
       )
     }
   }

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import MessageBoard from "./MessageBoard/components/MessageBoard.js";
 import SimpleStorage from "react-simple-storage";
+
+import MessageBoard from "./MessageBoard/components/MessageBoard.js";
 import image from "./Util/images/SocialMessage.jpg";
-import {MAXNUM} from "./Util/constants/constants";
 import "./App.css";
 
+import {MAXNUM} from "./Util/constants/constants";
 
 class App extends Component {
   constructor(props) {
@@ -44,9 +45,9 @@ class App extends Component {
     itemsCopy.sort((a, b) => {
       return b.score - a.score;
     });
-    
-    if (itemsCopy.length > MAXNUM)
-      itemsCopy.splice(MAXNUM, itemsCopy.length - MAXNUM);
+    const maxnum = parseInt(MAXNUM);
+    if (itemsCopy.length > maxnum)
+      itemsCopy.splice(maxnum, itemsCopy.length - maxnum);
     this.setState({ items: itemsCopy, username: "", text: "" });
   }
 
@@ -77,8 +78,6 @@ class App extends Component {
           <img className="App-img"
             alt="Social Message World"
             title="Social Message Board"
-            width="560"
-            height="315"
             src={image}
           />
           <p>Free up your mind and add your opinion!!</p>
